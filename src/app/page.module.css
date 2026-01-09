@@ -1,0 +1,219 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: var(--spacing-2xl);
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-sm);
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  margin: 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main {
+  flex: 1;
+}
+
+.searchSection {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  margin-bottom: var(--spacing-xl);
+}
+
+.searchInputs {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--spacing-md);
+  align-items: end;
+}
+
+@media (max-width: 640px) {
+  .searchInputs {
+    grid-template-columns: 1fr;
+  }
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: var(--spacing-sm);
+}
+
+.separatorIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  color: white;
+  border-radius: var(--radius-full);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .separator {
+    transform: rotate(90deg);
+    margin: var(--spacing-sm) 0;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+}
+
+.searchButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-xl);
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  min-width: 180px;
+  height: 48px;
+}
+
+.searchButton:hover:not(:disabled) {
+  background: var(--color-accent-dark);
+}
+
+.searchButton:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.searchButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.buttonSpinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.resetButton {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+  height: 48px;
+}
+
+.resetButton:hover {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: var(--color-text-secondary);
+}
+
+.error {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+  color: var(--color-error);
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.resultSection {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+}
+
+.exampleSection {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--color-text-secondary);
+}
+
+.exampleSection h3 {
+  margin: 0 0 var(--spacing-sm);
+  color: var(--color-text-primary);
+}
+
+.exampleSection p {
+  margin: 0 0 var(--spacing-md);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.example {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(99, 91, 255, 0.08);
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+}
+
+.example strong {
+  color: var(--color-accent-dark);
+}
+
+.footer {
+  text-align: center;
+  padding: var(--spacing-xl) 0 0;
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+}
+
+.footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

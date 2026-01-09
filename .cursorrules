@@ -1,0 +1,53 @@
+# The Separation Game - Cursor Rules
+
+## Project Context
+This is "The Separation Game" - a soccer player connection finder (like Six Degrees of Kevin Bacon but for soccer).
+Find the shortest path between two players through shared club teammates.
+
+## Tech Stack
+- Next.js 14+ with App Router
+- TypeScript (strict mode)
+- sql.js for SQLite (pure JS, no native deps)
+- React for UI components
+- Tailwind CSS for styling
+
+## Design System
+- Main background color: #f6f9fc
+- Accent color: #635bff
+- Accent light: #7c75ff
+- Accent dark: #4b44c4
+- Text primary: #1a1a2e
+- Text secondary: #6b7280
+- Clean, modern aesthetic
+- Responsive design (mobile-first)
+
+## Code Style
+- Use functional components with hooks
+- Prefer named exports over default exports
+- Use TypeScript interfaces over types where possible
+- Keep components small and focused (<100 lines ideal)
+- Co-locate component styles with components
+
+## File Naming
+- Components: PascalCase (PlayerCard.tsx)
+- Utilities: camelCase (formatDate.ts)
+- Types: PascalCase (Player.ts)
+- API routes: route.ts in folder structure
+
+## Data Rules
+- Only club football counts (not national teams)
+- Players must have actual appearances (not just roster)
+- Use bidirectional BFS for pathfinding
+- Cache path results for performance
+
+## API Design
+- RESTful endpoints under /api
+- Return JSON with consistent structure
+- Include proper error responses
+- Use query params for GET requests
+
+## Performance
+- Graph loaded in memory at startup
+- Debounce search inputs (300ms)
+- Cache recent path queries
+- Optimize images with next/image
